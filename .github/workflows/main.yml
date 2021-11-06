@@ -18,8 +18,12 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }
+          python-version: ${{ matrix.python-version }}
 
-- name: Instalação de Módulos que são necessários para a Aplicação
+      - name: Instalação de Módulos que são necessários para a Aplicação
         run: |
-          pip install flask}
+          pip install flask
+
+      - name: Test
+        run: |
+          python -m unittest -v test  
